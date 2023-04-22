@@ -1,9 +1,9 @@
 ﻿using AVH.Factory.BankAccount;
 using AVH.Factory.Enums;
 
-namespace AVH.Factory.Factories
+namespace AVH.Factory.Factories.FactoryMethod
 {
-    internal class BankAccountFactory
+    internal class BankAccountFactory : IBankAccountFactory
     {
         private readonly Dictionary<BankAccountType, Func<IBankAccount>> dicBankAccount
             = new()
@@ -16,7 +16,8 @@ namespace AVH.Factory.Factories
 
         public IBankAccount Create(BankAccountType bankAccountType)
         {
-            if (!dicBankAccount.TryGetValue(bankAccountType, out var func)){
+            if (!dicBankAccount.TryGetValue(bankAccountType, out var func))
+            {
                 throw new NotImplementedException("Bank Account Type is not implemented");
             }
 

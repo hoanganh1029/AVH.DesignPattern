@@ -1,19 +1,13 @@
-﻿using AVH.Factory.Cards;
-using AVH.Factory.Enums;
+﻿using AVH.Factory.Enums;
 
 namespace AVH.Factory.BankAccount
 {
-    internal class VipOneAccount : BankAccountBase, IBankAccount
+    internal class VipOneAccount : BankAccountBase
     {
         public VipOneAccount() : base()
         {
             _bankAccountType = BankAccountType.VipOne;
             _loanLimit = 3000;
-        }
-
-        public CreditCardBase GetCreditCard()
-        {
-            return new SilverCard();
         }
     }
 }

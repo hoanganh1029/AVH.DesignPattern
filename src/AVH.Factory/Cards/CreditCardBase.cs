@@ -2,14 +2,14 @@
 
 namespace AVH.Factory.Cards
 {
-    public abstract class CreditCardBase
+    public abstract class CreditCardBase : ICreditCard
     {
         public decimal AnnualCharge { get; set; }
-        public CardType CardType { get; protected set; }
+        public CreditCardType CardType { get; protected set; }
         public decimal CreditLimit { get; set; }
         public string GetCardInformation()
         {
-            return $"Your card is {CardType} and annual charge {AnnualCharge} and credit limit {CreditLimit}";
+            return $"Your card is {CardType}, annual charge is {AnnualCharge}, credit limit is {CreditLimit}";
         }
     }
 }

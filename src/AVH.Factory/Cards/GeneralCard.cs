@@ -7,7 +7,7 @@ namespace AVH.Factory.Cards
     {
         public GeneralCard()
         {
-            CardType = CardType.General;
+            CardType = CreditCardType.General;
             AnnualCharge = 30;
             CreditLimit = 1000;
         }

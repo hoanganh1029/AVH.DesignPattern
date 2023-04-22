@@ -7,7 +7,7 @@ namespace AVH.Factory.Cards
         public GoldCard()
         {
             AnnualCharge = 70;
-            CardType = CardType.Gold;
+            CardType = CreditCardType.Gold;
             CreditLimit = 5000;
         }
     }

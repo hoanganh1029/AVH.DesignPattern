@@ -7,13 +7,5 @@
         VipTwo,
         Platinum,
         NotImplemented,
-    }
-
-    public enum CardType
-    {
-        General,
-        Silver,
-        Gold,
-        Diamond
-    }
+    }   
 }

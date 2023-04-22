@@ -6,7 +6,7 @@ namespace AVH.Factory.Cards
     {
         public SilverCard()
         {
-            CardType = CardType.Silver;
+            CardType = CreditCardType.Silver;
             AnnualCharge = 50;
             CreditLimit = 3000;
         }

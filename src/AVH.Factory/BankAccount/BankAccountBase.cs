@@ -2,7 +2,7 @@
 
 namespace AVH.Factory.BankAccount
 {
-    public class BankAccountBase
+    public class BankAccountBase: IBankAccount
     {
         protected BankAccountType _bankAccountType;
         protected decimal _loanLimit;
@@ -14,7 +14,7 @@ namespace AVH.Factory.BankAccount
 
         public virtual string GetBankAccountInformation()
         {
-            return $"This bank account is {_bankAccountType.ToString()} with loan limit {_loanLimit}";
+            return $"The bank account is {_bankAccountType}, the loan limitation is {_loanLimit}";
         }
     }
 }

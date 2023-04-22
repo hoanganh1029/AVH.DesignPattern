@@ -6,7 +6,7 @@ namespace AVH.Factory.Cards
     {
         public DiamondCard()
         {
-            CardType = CardType.Diamond;
+            CardType = CreditCardType.Diamond;
             AnnualCharge = 90;
             CreditLimit = 7000;
         }
