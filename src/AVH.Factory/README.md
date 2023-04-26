@@ -14,7 +14,11 @@ Here is the diagram of implementation in the current repository
 
 *Abstract Factory* is the creational pattern that produces families of related objects. 
 
-Similar to the factory pattern, the creation logic and concrete type are not exposed to client when applying this pattern. However, there are several different:
+Similar to the factory pattern, the creation logic and concrete type are not exposed to client when applying this pattern. 
+
+![Alt text](../../images/AbstractFactory.png)
+
+The factory method could be used in abstract factory.
 -  Abstract factory includes many factories
 -  One factory (parent) contains several sub-factories
 -  One sub-factory provides one object type

@@ -118,10 +118,9 @@ void DoAbstractFactory()
 
     try
     {
-        var bankAcocunt = bankAccountCardAbstractFactory.CreateBankAccount(bankAccountType);
-        var creditCard = bankAccountCardAbstractFactory.CreateCard(creditCardType);
+        var bankAccountCard = bankAccountCardAbstractFactory.Create(bankAccountType, creditCardType);
 
-        var result = $" {bankAcocunt.GetBankAccountInformation()}\n {creditCard.GetCardInformation()}";
+        var result = $" {bankAccountCard.BankAccount.GetBankAccountInformation()}\n {bankAccountCard.CreditCard.GetCardInformation()}";
 
         Console.WriteLine(result + Environment.NewLine);
     }

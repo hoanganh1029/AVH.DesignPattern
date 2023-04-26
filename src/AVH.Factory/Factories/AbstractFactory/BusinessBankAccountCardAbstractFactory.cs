@@ -1,4 +1,5 @@
 ﻿using AVH.Factory.BankAccount;
+using AVH.Factory.BankAccountCards;
 using AVH.Factory.Cards;
 using AVH.Factory.Enums;
 using AVH.Factory.Factories.FactoryMethod;
@@ -16,6 +17,11 @@ namespace AVH.Factory.Factories.AbstractFactory
         {
             _bankAccountFactory = bankAccountFactory;
             _creditCardFactory = creditCardFactory;
+        }
+
+        public BankAccountCard Create(BankAccountType bankAccountType, CreditCardType creditCardType)
+        {
+            return new BankAccountCard(CreateBankAccount(bankAccountType), CreateCard(creditCardType));
         }
 
         public IBankAccount CreateBankAccount(BankAccountType bankAccountType)
