@@ -4,16 +4,39 @@ using AVH.Factory.Enums;
 using AVH.Factory.Factories.AbstractFactory;
 using AVH.Factory.Factories.FactoryMethod;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
-
-var serviceProvider = new ServiceCollection()
+var serviceCollection = new ServiceCollection()
     .AddSingleton<IBankAccountCardAbstractFactory, PersonalBankAccountCardAbstractFactory>()
     .AddSingleton<IBankAccountCardAbstractFactory, BusinessBankAccountCardAbstractFactory>()
     .AddSingleton<IBankAccountFactory, BankAccountFactory>()
-    .AddSingleton<ICreditCardFactory, CreditCardFactory>()
-    .BuildServiceProvider();
+    .AddSingleton<ICreditCardFactory, CreditCardFactory>();
 
-Console.WriteLine("Start Factory Pattern");
+
+#region Logging with Factory
+serviceCollection.AddLogging(loggingBuilder =>
+{
+    loggingBuilder.AddConsole();
+    loggingBuilder.AddDebug();
+});
+
+
+var serviceProvider = serviceCollection.BuildServiceProvider();
+
+var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
+
+var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
+var loggerFromFactoryGeneric = loggerFactory.CreateLogger<Program>();
+var loggerFromFactoryType = loggerFactory.CreateLogger(typeof(Program));
+
+//Three loggers below are the same
+loggerFromFactoryGeneric.LogInformation("Ready from Factory Generic");
+loggerFromFactoryType.LogInformation("Ready from Factory Type");
+logger.LogInformation("Start Factory Pattern");
+Debug.WriteLine("Debug xyz");
+
+#endregion
 
 var bankAccountFactory = serviceProvider.GetRequiredService<IBankAccountFactory>();
 var bankAccountCardAbtractFactoryServices = serviceProvider.GetServices<IBankAccountCardAbstractFactory>();
