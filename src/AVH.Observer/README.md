@@ -5,7 +5,7 @@
 
 In this sample, instead of managing a list of subscribers directly within the publisher (like this [sample](https://refactoring.guru/design-patterns/observer)), I use dependency injection and generics to automatically locate and invoke the appropriate consumer based on the event type.
 
-After successfully creating a new product, a ProductEvent is published. Two consumers then process the event and display notifications on the screen
+After successfully creating a new product, a ProductEvent is published. Two consumers then process the event and display notifications on the screen.
 
 ![alt text](../../images/ObserverImplementation.png)
 
