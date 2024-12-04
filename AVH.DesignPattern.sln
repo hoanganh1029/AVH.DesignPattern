@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AVH.Factory", "src\AVH.Fact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVH.Builder", "src\AVH.Builder\AVH.Builder.csproj", "{E2F14E3D-A11C-4B7F-9CE4-1FDA8F563954}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVH.Observer", "AVH.Observer\AVH.Observer.csproj", "{432FE5B9-54F6-4845-AE73-C33A23CC6D86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVH.Observer", "src\AVH.Observer\AVH.Observer.csproj", "{432FE5B9-54F6-4845-AE73-C33A23CC6D86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
